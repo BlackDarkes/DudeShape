@@ -20,5 +20,6 @@ import { PurchasesItemsEntity } from '../purchases/entities/purchasesItems.entit
   ],
   controllers: [UserController],
   providers: [UserService],
+  exports: [UserService],
 })
 export class UserModule {}
