@@ -33,7 +33,7 @@ export class AuthService {
 		return { message: "Вы успешно авторизовались!" };
 	}
 
-	async validateUser(dto: LoginDto) {
+	async validateUser(dto: LoginDto): Promise<any> {
 		const { email, password } = dto;
 		const user = await this.userService.findByEmail(email);
 
