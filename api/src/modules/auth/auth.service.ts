@@ -1,4 +1,4 @@
-import { Injectable } from "@nestjs/common";
+import { Injectable, UnauthorizedException } from "@nestjs/common";
 import { UserService } from "../user/user.service";
 import { RegisterDto } from "./dto/register.dto";
 import * as bcrypt from "bcrypt";
@@ -30,7 +30,7 @@ export class AuthService {
 			password: hashedPassword,
 		});
 
-		return { message: "Вы успешно авторизовались!" };
+		return { message: "Вы успешно создали учетную запись!" };
 	}
 
 	async validateUser(dto: LoginDto): Promise<any> {
@@ -80,5 +80,51 @@ export class AuthService {
 				email: user.email,
 			},
 		};
+	}
+
+	async refreshToken(refreshToken: string, res: Response) {
+		try {
+			const payload = this.jwtService.verify(refreshToken);
+			const user = await this.userService.findById(payload.sub);
+
+			if (!user) {
+				throw new UnauthorizedException("User not found!");
+			}
+
+			const accessTokenPayload = { email: user.email, sub: user.id };
+			const refreshTokenPayload = { email: user.email, sub: user.id };
+
+			const newAccessToken = this.jwtService.sign(accessTokenPayload, {
+				expiresIn: "1h",
+			});
+			const newRefreshToken = this.jwtService.sign(refreshTokenPayload, {
+				expiresIn: "7d",
+			});
+
+			res.cookie("access_token", newAccessToken, {
+				httpOnly: true,
+				sameSite: "strict",
+				secure: false,
+				maxAge: 60 * 60 * 1000, //1h
+			});
+
+			res.cookie("refresh_token", newRefreshToken, {
+				httpOnly: true,
+				sameSite: "strict",
+				secure: false,
+				maxAge: 7 * 24 * 60 * 60, //7d
+			});
+
+			return {
+				message: "Токен обновлен!",
+				user: {
+					id: user.id,
+					name: user.name,
+					email: user.email,
+				},
+			};
+		} catch (error) {
+			throw error;
+		}
 	}
 }
