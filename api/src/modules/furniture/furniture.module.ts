@@ -2,12 +2,11 @@ import { Module } from '@nestjs/common';
 import { FurnitureService } from './furniture.service';
 import { FurnitureController } from './furniture.controller';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { FeedbackEntity } from '../feedback/entities/feedback.entity';
-import { UserEntity } from '../user/entities/user.entity';
+import { FurnitureEntity } from './entities/furniture.entity';
 
 @Module({
   imports: [
-    TypeOrmModule.forFeature([FeedbackEntity])
+    TypeOrmModule.forFeature([FurnitureEntity])
   ],
   controllers: [FurnitureController],
   providers: [FurnitureService],
