@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Montserrat, DM_Sans } from "next/font/google";
-import "./globals.css";
+import { QueryRouter } from "./routers/QueryRouter";
 
 const montserrat = Montserrat({
   variable: "--font-montserrat",
@@ -27,7 +27,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${montserrat.variable} ${dm_sans.variable}`}>
-        {children}
+        <QueryRouter>{children}</QueryRouter>
       </body>
     </html>
   );
