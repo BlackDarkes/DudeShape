@@ -1,0 +1,52 @@
+.button {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: rem(24);
+  height: rem(24);
+
+  &Line {
+    width: 100%;
+    height: rem(2);
+    background-color: $mainGreen;
+    transition: $transition;
+  }
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    width: 50%;
+    height: rem(2);
+    background-color: $mainGreen;
+    transition: $transition;
+  }
+
+  &::before {
+    left: 0;
+    top: 0;
+  }
+
+  &::after {
+    right: 0;
+    bottom: 0;
+  }
+
+  &Active {
+    &Line {
+      rotate: -40deg;
+    }
+
+    &::before {
+      width: 100%;
+      top: calc(50% - rem(1.5));
+      rotate: 45deg;
+    }
+
+    &::after {
+      width: 100%;
+      bottom: calc(50% - rem(0.5));
+      rotate: 45deg;
+    }
+  }
+}

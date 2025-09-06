@@ -13,6 +13,8 @@ button {
   margin: 0;
   width: fit-content;
   height: fit-content;
+  border: 0;
+  outline: 0;
   background-color: transparent;
   color: inherit;
 }
@@ -20,6 +22,17 @@ button {
 body {
   font-family: var($font-dm_sans);
   overflow: hidden;
+}
+
+li {
+  list-style: none;
+  color: inherit;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  outline: 0;
 }
 
 h1,
