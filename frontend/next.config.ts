@@ -5,7 +5,7 @@ const nextConfig: NextConfig = {
     API_URL: process.env.API_URL,
   },
   async rewrites() {
-    const apiPath = process.env.API_UEL || "http://localhost:8000"
+    const apiPath = process.env.API_URL || "http://localhost:8000"
 
     return [
       {
@@ -13,7 +13,13 @@ const nextConfig: NextConfig = {
         destination: `${apiPath}/api/:path*`
       }
     ];
-  }
+  },
+  sassOptions: {
+    additionalData: `
+      @use "src/shared/styles/helpers/index.scss" as *;
+      @use "src/shared/styles/base/variables.scss" as *;
+    `,
+  },
 };
 
 export default nextConfig;

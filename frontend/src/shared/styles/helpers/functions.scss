@@ -1,0 +1,28 @@
+@use "sass:math";
+
+@function rem($size) {
+  @if (math.is_unitless($size)) {
+    @return math.div($size, 16) + "rem";
+  } @else {
+    @return "Убери единицы измерения!";
+  }
+}
+
+@function fluid($min, $max) {
+  $maxViewportWidth: 1600;
+  $minViewportWidth: 480;
+
+  $maxSize: math.div($max, 16);
+  $minSize: math.div($min, 16);
+  $maxViewport: math.div($maxViewportWidth, 16);
+  $minViewport: math.div($minViewportWidth, 16);
+
+  $slope: math.div(($maxSize - $minSize), ($maxViewport - $minViewport));
+  $yAxisIntersection: -$minViewport * $slope + $minSize;
+
+  @return clamp(
+    #{$minSize * 1rem},
+    #{$yAxisIntersection * 1rem} + #{$slope * 100vw},
+    #{$maxSize * 1rem}
+  );
+}

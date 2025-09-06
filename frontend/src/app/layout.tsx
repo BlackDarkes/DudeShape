@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Montserrat, DM_Sans } from "next/font/google";
 import { QueryRouter } from "./routers/QueryRouter";
+import "@/shared/styles/base/globals.scss";
+import "@/shared/styles/base/normalize.scss"; 
 
 const montserrat = Montserrat({
   variable: "--font-montserrat",
