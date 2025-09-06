@@ -1,7 +1,8 @@
 @use "sass:math";
+@use "functions" as *;
 
 $laptop: 1023.98;
-$table: 1023.98;
+$tablet: 1023.98;
 $mobile: 767.98;
 $mobile-s: 480.98;
 

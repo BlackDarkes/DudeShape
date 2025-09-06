@@ -10,7 +10,9 @@ export const Header = () => {
     <header className={styles.header}>
       <Container className={styles.headerContainer}>
         <Logo />
-        <NavList />
+
+        <NavList className={styles.headerNav} />
+
         <div className={styles.headerButtons}>
           <button type="button" className={styles.headerSearch}><IconSearch /></button>
           <BurgerButton />

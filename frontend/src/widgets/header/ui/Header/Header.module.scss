@@ -7,6 +7,12 @@
     align-items: center;
   }
 
+  &Nav {
+    @include tablet() {
+      display: none;
+    }
+  }
+
   &Buttons {
     display: flex;
     align-items: center;
