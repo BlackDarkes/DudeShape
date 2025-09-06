@@ -1,10 +1,12 @@
 @use "./variables" as *;
 
-button, label {
+button,
+label {
   cursor: pointer;
 }
 
-img, button {
+img,
+button {
   user-select: none;
 }
 
@@ -14,9 +16,25 @@ button {
   width: fit-content;
   height: fit-content;
   border: 0;
-  outline: 0;
   background-color: transparent;
   color: inherit;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button,
+a {
+  outline: rem(1) solid transparent;
+  outline-offset: rem(5);
+  border-radius: rem(4);
+  transition: $transition;
+
+  &:focus-visible {
+    outline-color: $mainGreen;
+  }
 }
 
 body {
@@ -27,12 +45,6 @@ body {
 li {
   list-style: none;
   color: inherit;
-}
-
-a {
-  text-decoration: none;
-  color: inherit;
-  outline: 0;
 }
 
 h1,

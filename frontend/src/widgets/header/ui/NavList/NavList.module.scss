@@ -1,4 +1,35 @@
 .list {
   display: flex;
   column-gap: rem(50);
+
+  &Link {
+    position: relative;
+    color: $mainBlack;
+    transition: $transition;
+
+    &::before {
+      content: "";
+      position: absolute;
+      bottom: rem(-3);
+      left: 0;
+      width: 100%;
+      height: rem(2);
+      background-color: $mainGreen;
+      scale: 0;
+      transition: $transition;
+      transform-origin: left;
+    }
+
+    &:active {
+      translate: 0 rem(1);
+    }
+
+    @include hover() {
+      color: $mainGreen;
+
+      &::before {
+        scale: 1;
+      }
+    }
+  }
 }
