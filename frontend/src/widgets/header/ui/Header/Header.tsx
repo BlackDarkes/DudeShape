@@ -4,6 +4,7 @@ import { NavList } from "../NavList/NavList";
 import { BurgerButton } from "../BurgerButton/BurgerButton";
 import IconSearch from "../../assets/search.svg";
 import styles from './Header.module.scss'
+import { BurgerList } from "../BurgerList/BurgerList";
 
 export const Header = () => {
   return (
@@ -17,6 +18,8 @@ export const Header = () => {
           <button type="button" className={styles.headerSearch}><IconSearch /></button>
           <BurgerButton />
         </div>
+
+        <BurgerList />
       </Container>
     </header>
   );

@@ -1,13 +1,11 @@
 "use client"
 
-import { useState } from "react"
+import { useStore } from "@/app/store/store";
+
+
 
 export const useBurgerMenu = () => {
-  const [isOpen, setIsOpen] = useState<boolean>(false);
+  const { isOpen, toggleOpen } = useStore();
 
-  const toggleMenu = () => {
-    setIsOpen(!isOpen);
-  }
-
-  return { isOpen, toggleMenu };
+  return { isOpen, toggleOpen };
 }

@@ -1,0 +1,16 @@
+.burgerList {
+  position: fixed;
+  top: 0;
+  right: 0;
+  translate: 100vw 0;
+  width: min(100% - rem(20), rem(400));
+  height: 100vh;
+  background-color: $mainWhite;
+  color: $mainBlack;
+  transition: $transition;
+  z-index: $z-300;
+
+  &Active {
+    translate: 0 0;
+  }
+}

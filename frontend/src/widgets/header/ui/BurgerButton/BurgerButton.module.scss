@@ -4,6 +4,7 @@
   align-items: center;
   width: rem(24);
   height: rem(24);
+  z-index: $z-400;
 
   &Line {
     width: 100%;
