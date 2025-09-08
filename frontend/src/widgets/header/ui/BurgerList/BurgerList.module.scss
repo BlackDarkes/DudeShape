@@ -1,16 +1,40 @@
 .burgerList {
   position: fixed;
   top: 0;
-  right: 0;
-  translate: 100vw 0;
+  left: 0;
+  padding: rem(20) rem(30);
+  translate: -100vw 0;
   width: min(100% - rem(20), rem(400));
   height: 100vh;
   background-color: $mainWhite;
   color: $mainBlack;
+  box-shadow: rem(-1) rem(0) rem(24) $mainBlack;
   transition: $transition;
   z-index: $z-300;
 
   &Active {
     translate: 0 0;
+    transition: $transition;
+  }
+
+  &Nav {
+    flex-direction: column;
+    row-gap: rem(30);
+    margin-bottom: rem(45);
+    font-size: rem(24);
+
+    @include tablet-above() {
+      display: none;
+    }
+  }
+
+  &Buttons {
+    display: flex;
+    flex-direction: column;
+    row-gap: rem(30);
+  }
+
+  &Button {
+    padding: rem(12) rem(20);
   }
 }

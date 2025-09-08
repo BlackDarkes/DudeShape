@@ -10,11 +10,11 @@ export const BurgerList = () => {
 
   return (
     <div className={`${styles.burgerList} ${isOpen ? styles.burgerListActive : ""}`}>
-      <NavList />
+      <NavList className={styles.burgerListNav} />
 
-      <div>
-        <Button>Login</Button>
-        <Button>Register</Button>
+      <div className={styles.burgerListButtons}>
+        <Button className={styles.burgerListButton}>Login</Button>
+        <Button className={styles.burgerListButton}>Register</Button>
       </div>
     </div>
   );
