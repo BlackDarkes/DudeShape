@@ -1,0 +1,15 @@
+.hero {
+  &Container {
+    display: flex;
+    align-items: center;
+    background-color: $secondaryGreen;
+  }
+
+  &Image {
+    width: min(100%, rem(411));
+
+    @include mobile() {
+      display: none;
+    }
+  }
+}

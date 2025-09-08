@@ -1,0 +1,26 @@
+.info {
+  padding-inline: clamp(rem(20), 7vw, rem(100));
+  width: min(100%, rem(789));
+  color: $mainWhite;
+
+  &Title {
+    @include fluid-text(52, 28);
+    margin-bottom: clamp(rem(10), 7vw, rem(20));
+  }
+
+  &Text {
+    @include fluid-text(18, 14);
+    margin-bottom: clamp(rem(15), 7vw, rem(35));
+  }
+
+  &Button {
+    @include fluid-text(20, 16);
+    padding: rem(15) rem(25); 
+    background-color: $mainWhite;
+    color: $mainGreen;
+  }
+
+  @include mobile() {
+    padding-block: rem(20);
+  }
+}

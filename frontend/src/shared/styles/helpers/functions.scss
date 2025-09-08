@@ -8,7 +8,7 @@
   }
 }
 
-@function fluid($min, $max) {
+@function fluid($max, $min) {
   $maxViewportWidth: 1600;
   $minViewportWidth: 480;
 

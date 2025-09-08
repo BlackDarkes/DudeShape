@@ -9,7 +9,7 @@ export const BurgerList = () => {
   const { isOpen } = useBurgerMenu();
 
   return (
-    <div className={`${styles.burgerList} ${isOpen ? styles.burgerListActive : ""}`}>
+    <div tabIndex={-1} className={`${styles.burgerList} ${isOpen ? styles.burgerListActive : ""}`}>
       <NavList className={styles.burgerListNav} />
 
       <div className={styles.burgerListButtons}>
