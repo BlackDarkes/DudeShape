@@ -18,9 +18,13 @@
     padding: rem(15) rem(25); 
     background-color: $mainWhite;
     color: $mainGreen;
+
+    &:focus-visible {
+      outline-color: $mainWhite
+    }
   }
 
   @include mobile() {
-    padding-block: rem(20);
+    padding-block: rem(40);
   }
 }

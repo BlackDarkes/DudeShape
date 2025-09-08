@@ -1,4 +1,6 @@
 .hero {
+  margin-top: rem(106);
+
   &Container {
     display: flex;
     align-items: center;
@@ -11,5 +13,9 @@
     @include mobile() {
       display: none;
     }
+  }
+
+  @include mobile() {
+    margin-top: rem(84);
   }
 }

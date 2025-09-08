@@ -1,4 +1,8 @@
 .header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
   padding-block: rem(44) rem(26);
 
   &Container {
@@ -30,5 +34,9 @@
     @include hover() {
       color: $mainBlack;
     }
+  }
+
+  @include mobile() {
+    padding-block: rem(24);
   }
 }

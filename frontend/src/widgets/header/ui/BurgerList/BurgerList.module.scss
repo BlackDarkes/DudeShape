@@ -2,13 +2,16 @@
   position: fixed;
   top: 0;
   left: 0;
-  padding: rem(20) rem(30);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: rem(50) rem(40);
   translate: -100vw 0;
-  width: min(100% - rem(20), rem(400));
-  height: 100vh;
+  width: min(100%, rem(400));
+  height: 100dvh;
   background-color: $mainWhite;
   color: $mainBlack;
-  box-shadow: rem(-1) rem(0) rem(24) $mainBlack;
+  box-shadow: rem(-1) rem(0) rem(12) $mainBlack;
   transition: $transition;
   z-index: $z-300;
 
@@ -21,7 +24,7 @@
     flex-direction: column;
     row-gap: rem(30);
     margin-bottom: rem(45);
-    font-size: rem(24);
+    font-size: rem(28);
 
     @include tablet-above() {
       display: none;
@@ -32,9 +35,14 @@
     display: flex;
     flex-direction: column;
     row-gap: rem(30);
+    font-size: rem(20);
   }
 
   &Button {
     padding: rem(12) rem(20);
+  }
+  
+  @include mobile-s() {
+    width: 100vw;
   }
 }

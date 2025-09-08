@@ -9,12 +9,12 @@ export const BurgerList = () => {
   const { isOpen } = useBurgerMenu();
 
   return (
-    <div tabIndex={-1} className={`${styles.burgerList} ${isOpen ? styles.burgerListActive : ""}`}>
+    <div className={`${styles.burgerList} ${isOpen ? styles.burgerListActive : ""}`}>
       <NavList className={styles.burgerListNav} />
 
       <div className={styles.burgerListButtons}>
-        <Button className={styles.burgerListButton}>Login</Button>
-        <Button className={styles.burgerListButton}>Register</Button>
+        <Button ariaLabel="Login" className={styles.burgerListButton} tabindex={-1}>Login</Button>
+        <Button ariaLabel="Register" className={styles.burgerListButton} tabindex={-1}>Register</Button>
       </div>
     </div>
   );
