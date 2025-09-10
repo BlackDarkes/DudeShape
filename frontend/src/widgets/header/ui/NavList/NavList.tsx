@@ -1,12 +1,13 @@
 import Link from "next/link";
 import { navigationItem } from "../../constants/navigationItems";
 import styles from './NavList.module.scss'
+import { memo } from "react";
 
 interface INavListProps {
   className?: string
 }
 
-export const NavList = ({ className }: INavListProps) => {
+const NavList = memo(({ className }: INavListProps) => {
   return (
     <ul className={`${styles.list} ${className ? className : ""}`}>
       {navigationItem.map((navItem) => (
@@ -16,4 +17,7 @@ export const NavList = ({ className }: INavListProps) => {
       ))}
     </ul>
   );
-}
+})
+
+NavList.displayName = "NavList";
+export { NavList };
