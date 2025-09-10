@@ -1,0 +1,26 @@
+.companies {
+  padding-block: clamp(rem(80), 9vw, rem(140));
+
+  &Container {
+    display: flex;
+    flex-direction: column;
+    row-gap: clamp(rem(20), 3vw, rem(40));
+  }
+
+  &Title {
+    @include fluid-text(32, 24);
+    text-align: center;
+    color: $mainGreen;
+  }
+
+  &List {
+    display: flex;
+    column-gap: clamp(rem(40), 7vw, rem(100));
+    width: 100%;
+    overflow-x: auto;
+
+    &::-webkit-scrollbar {
+      height: 0;
+    }
+  }
+}

@@ -1,0 +1,14 @@
+.list {
+  display: flex;
+  gap: 40px; /* расстояние между элементами */
+  overflow-x: auto; /* включить прокрутку при переполнении */
+  flex-shrink: 0;
+  width: auto;
+  -webkit-overflow-scrolling: touch; /* плавность прокрутки на iOS */
+  white-space: nowrap;
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
