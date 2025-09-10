@@ -1,8 +1,9 @@
 import Image from "next/image";
 import { companiesImages } from "../../constants/companiesImages";
 import styles from './CompaniesList.module.scss'
+import { memo } from "react";
 
-export const CompaniesList = () => {
+const CompaniesList = memo(() => {
   return (
     <ul className={styles.list}>
       {companiesImages.map((image) => (
@@ -12,4 +13,7 @@ export const CompaniesList = () => {
       ))}
     </ul>
   );
-}
+});
+
+CompaniesList.displayName = "CompaniesList";
+export { CompaniesList };
