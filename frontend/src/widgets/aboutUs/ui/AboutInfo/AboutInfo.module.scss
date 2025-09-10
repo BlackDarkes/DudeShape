@@ -1,0 +1,15 @@
+.aboutInfo {
+  width: rem(436);
+
+  &Title {
+    @include fluid-text(32, 24);
+    margin-bottom: clamp(rem(10), 7vw, rem(20));
+    color: $mainGreen;
+  }
+
+  &Text {
+    @include fluid-text(20, 16);
+    margin-bottom: clamp(rem(30), 7vw, rem(40));
+    color: $mainGray;
+  }
+}

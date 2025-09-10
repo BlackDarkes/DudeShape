@@ -1,0 +1,22 @@
+.list {
+  display: flex;
+  flex-direction: column;
+  row-gap: rem(30);
+
+  &Item {
+    display: flex;
+    column-gap: rem(20);
+    align-items: flex-start;
+  }
+
+  &Title {
+    @include fluid-text(20, 18);
+    margin-bottom: rem(14);
+    color: $mainGreen;
+  }
+
+  &Text {
+    @include fluid-text(16, 14);
+    color: $secondaryGray;
+  }
+}

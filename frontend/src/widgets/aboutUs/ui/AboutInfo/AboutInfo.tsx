@@ -1,11 +1,12 @@
 import { AboutList } from "../AboutList/AboutList";
+import styles from './AboutInfo.module.scss'
 
 export const AboutInfo = () => {
   return (
-    <div>
+    <div className={styles.aboutInfo}>
       <div>
-        <h2>About Us</h2>
-        <p>All of our furniture uses the best materials and choices for our customers.All of our furniture uses the best materials </p>
+        <h2 className={styles.aboutInfoTitle}>About Us</h2>
+        <p className={styles.aboutInfoText}>All of our furniture uses the best materials and choices for our customers.All of our furniture uses the best materials </p>
       </div>
 
       <AboutList />

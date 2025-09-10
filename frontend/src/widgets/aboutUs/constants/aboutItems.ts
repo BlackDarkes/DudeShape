@@ -13,7 +13,7 @@ export const aboutItems: IAboutItems[] = [
   {
     id: 1,
     image: {
-      src: "/aboutUs/quality.svg",
+      src: "/aboutUs/icons/quality.svg",
       width: 50,
       height: 50,
     },
@@ -23,7 +23,7 @@ export const aboutItems: IAboutItems[] = [
   {
     id: 2,
     image: {
-      src: "/aboutUs/secure.svg",
+      src: "/aboutUs/icons/secure.svg",
       width: 50,
       height: 50,
     },
@@ -33,7 +33,7 @@ export const aboutItems: IAboutItems[] = [
   {
     id: 3,
     image: {
-      src: "/aboutUs/free.svg",
+      src: "/aboutUs/icons/free.svg",
       width: 50,
       height: 50
     },

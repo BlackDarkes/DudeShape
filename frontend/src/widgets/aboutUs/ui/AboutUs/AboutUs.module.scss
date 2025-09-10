@@ -1,0 +1,14 @@
+.aboutUs {
+  padding-bottom: rem(140);
+
+  &Container {
+    display: flex;
+    justify-content: space-between;
+    column-gap: rem(100);
+  }
+
+  &Image {
+    height: min(100%, rem(577));
+    box-shadow: rem(26) rem(35) rem(1) rem(1) $lightGreen;
+  }
+}

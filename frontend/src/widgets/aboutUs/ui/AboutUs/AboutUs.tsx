@@ -1,14 +1,14 @@
 import { Container } from "@/shared/ui/Container/Container";
 import Image from "next/image";
-import ImageFurniture from "../../assets/furniture.png";
 import { AboutInfo } from "../AboutInfo/AboutInfo";
+import styles from './AboutUs.module.scss'
 
 export const AboutUs = () => {
   return (
-    <section>
-      <Container>
-        <div>
-          <Image src={ImageFurniture} alt="furniture" />
+    <section className={styles.aboutUs}>
+      <Container className={styles.aboutUsContainer}>
+        <div className={styles.aboutUsImage}>
+          <Image src={"/aboutUs/furniture.png"} alt="furniture" width={596} height={577} />
         </div>
 
         <AboutInfo />
