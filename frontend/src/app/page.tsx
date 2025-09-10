@@ -1,6 +1,7 @@
-import { Companies } from "@/widgets/companies/ui/Companies/Companies";
-import { Header } from "@/widgets/header/ui/Header/Header";
-import { Hero } from "@/widgets/hero/ui/Hero/Hero";
+import { Header } from "@/widgets/header";
+import { Hero } from "@/widgets/hero";
+import { Companies } from "@/widgets/companies";
+import { AboutUs } from "@/widgets/aboutUs";
 
 export default function Home() {
   return (
@@ -8,6 +9,7 @@ export default function Home() {
       <Header />
       <Hero />
       <Companies />
+      <AboutUs/>
     </>
   );
 }
