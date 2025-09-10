@@ -5,10 +5,16 @@
     display: flex;
     justify-content: space-between;
     column-gap: rem(100);
+
+    @include tablet() {
+      flex-direction: column;
+      align-items: center;
+      row-gap: rem(80);
+    }
   }
 
   &Image {
     height: min(100%, rem(577));
-    box-shadow: rem(26) rem(35) rem(1) rem(1) $lightGreen;
+    box-shadow: clamp(rem(10), 2vw, rem(26)) clamp(rem(15), 2vw, rem(35)) rem(1) rem(1) $lightGreen;
   }
 }

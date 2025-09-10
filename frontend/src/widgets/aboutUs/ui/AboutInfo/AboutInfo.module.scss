@@ -12,4 +12,8 @@
     margin-bottom: clamp(rem(30), 7vw, rem(40));
     color: $mainGray;
   }
+
+  @include tablet() {
+    width: min(100%, rem(436));
+  }
 }
