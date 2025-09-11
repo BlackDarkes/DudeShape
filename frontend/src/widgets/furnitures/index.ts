@@ -1,0 +1,1 @@
+export { Furnitures } from "./ui/Furnitures/Furnitures"

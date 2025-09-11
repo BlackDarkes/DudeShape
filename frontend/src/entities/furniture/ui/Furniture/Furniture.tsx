@@ -8,7 +8,7 @@ interface IFurnitureProps {
   
 export const Furniture = ({ furniture }: IFurnitureProps) => {
   return (
-    <li key={furniture.id}>
+    <li>
       <Image src={`${process.env.API_URL}${furniture.image}`} width={380} height={246} alt={furniture.name} />
 
       <FurnitureInfo furnitureInfo={furniture} />

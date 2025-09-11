@@ -1,3 +1,5 @@
+"use client"
+
 import type { IFurniture } from "../types/furniture.interface";
 import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
