@@ -1,6 +1,6 @@
 export interface IFurniture {
   id: string;
-  img: string;
+  image: string;
   name: string;
-  price: number;
+  price: string;
 }

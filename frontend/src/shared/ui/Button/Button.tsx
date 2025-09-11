@@ -7,6 +7,7 @@ interface IButtonProps {
   type?: "button" | "submit";
   className?: string;
   tabindex?: number,
+  onClick?: () => void;
 }
 
 export const Button = ({
@@ -15,6 +16,7 @@ export const Button = ({
   type = "button",
   className,
   tabindex=0,
+  onClick,
 }: IButtonProps) => {
   return (
     <button
@@ -22,6 +24,7 @@ export const Button = ({
       className={`${styles.button} ${className ? className : ""}`}
       aria-label={ariaLabel}
       tabIndex={tabindex}
+      onClick={onClick}
     >
       {children}
     </button>
