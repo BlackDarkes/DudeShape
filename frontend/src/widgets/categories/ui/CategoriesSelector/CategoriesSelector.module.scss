@@ -1,0 +1,63 @@
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  column-gap: rem(60);
+
+  &Image {
+    position: relative;
+    z-index: $z-200;
+
+    &Pic {
+      position: relative;
+      z-index: $z-100;
+    }
+
+    &::before, &::after {
+      content: "";
+      position: absolute;
+      width: clamp(rem(90),14vw,rem(175));
+      height: clamp(rem(50),7vw,rem(85));
+      background-color: $mainGreen;
+    }
+
+    &::before {
+      top: rem(-12);
+      left: rem(-12);
+    }
+
+    &::after {
+      bottom: rem(-12);
+      right: rem(-12);
+    }
+  }
+
+  &Buttons {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: rem(30);
+  }
+
+  &Button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: rem(14);
+    padding: rem(15) rem(65);
+    width: 100%;
+    border: rem(1) solid $lightGreen;
+    color: $disableGray;
+
+    @include active();
+    @include hover() {
+      color: $mainBlack;
+      scale: 1.05;
+    }
+
+    &Active {
+      background-color: $mainGreen;
+      color: $mainWhite;
+      border-color: $secondaryGreen;
+    }
+  }
+}

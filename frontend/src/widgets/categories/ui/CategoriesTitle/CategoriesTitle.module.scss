@@ -1,3 +1,22 @@
-.block {
-  
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: rem(20);
+
+  &Title {
+    color: $mainGreen;
+    text-align: center;
+    @include fluid-text(32, 24)
+  }
+
+  &Buttons {
+    display: flex;
+    column-gap: clamp(rem(50),7vw,rem(100));
+  }
+
+  &Button {
+    color: $disableGray;
+    @include fluid-text(24, 20)
+  }
 }

@@ -1,0 +1,10 @@
+.categories {
+  padding-block: clamp(rem(80),7vw,rem(140));
+
+  &Container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    row-gap: rem(80);
+  }
+}
