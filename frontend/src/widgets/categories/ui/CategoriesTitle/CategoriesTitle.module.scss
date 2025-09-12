@@ -7,18 +7,43 @@
   &Title {
     color: $mainGreen;
     text-align: center;
-    @include fluid-text(32, 24)
+    @include fluid-text(32, 24);
   }
 
   &Buttons {
     display: flex;
-    column-gap: clamp(rem(30),7vw,rem(100));
-    overflow-x: auto;
+    column-gap: clamp(rem(30), 7vw, rem(100));
   }
 
   &Button {
+    position: relative;
     flex-shrink: 0;
     color: $disableGray;
-    @include fluid-text(24, 16)
+    @include fluid-text(24, 16);
+
+    &::before {
+      content: "";
+      position: absolute;
+      bottom: rem(-5);
+      left: calc(50% - rem(29));
+      height: rem(2);
+      width: rem(57);
+      background-color: $mainGreen;
+      scale: 0;
+      transition: $transition;
+    }
+
+    @include hover() {
+      color: $mainBlack;
+    }
+
+    &Active {
+      color: $mainGreen;
+      transition: $transition;
+
+      &::before {
+        scale: 1;
+      }
+    }
   }
 }

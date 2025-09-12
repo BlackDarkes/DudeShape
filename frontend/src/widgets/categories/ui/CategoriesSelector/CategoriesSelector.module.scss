@@ -32,38 +32,6 @@
     }
   }
 
-  &Buttons {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: rem(30);
-    width: min(100%, rem(474));
-  }
-
-  &Button {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    row-gap: rem(14);
-    width: min(100%, rem(222));
-    height: clamp(rem(80),7vw,rem(90));
-    border: rem(1) solid $lightGreen;
-    color: $disableGray;
-
-    @include fluid-text(16, 14);
-    @include active();
-    @include hover() {
-      color: $mainBlack;
-      scale: 1.05;
-    }
-
-    &Active {
-      background-color: $mainGreen;
-      color: $mainWhite;
-      border-color: $secondaryGreen;
-    }
-  }
-
   @include tablet() {
     flex-direction: column;
     row-gap: rem(80);
