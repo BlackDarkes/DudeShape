@@ -4,6 +4,7 @@ import { Companies } from "@/widgets/companies";
 import { AboutUs } from "@/widgets/aboutUs";
 import { Furnitures } from "@/widgets/furnitures";
 import { Categories } from "@/widgets/categories";
+import { Feedback } from "@/widgets/feedback";
 
 export default function Home() {
   return (
@@ -14,6 +15,7 @@ export default function Home() {
       <AboutUs/>
       <Furnitures />
       <Categories />
+      <Feedback />
     </>
   );
 }
