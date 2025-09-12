@@ -3,6 +3,7 @@ import { Hero } from "@/widgets/hero";
 import { Companies } from "@/widgets/companies";
 import { AboutUs } from "@/widgets/aboutUs";
 import { Furnitures } from "@/widgets/furnitures";
+import { Categories } from "@/widgets/categories";
 
 export default function Home() {
   return (
@@ -12,6 +13,7 @@ export default function Home() {
       <Companies />
       <AboutUs/>
       <Furnitures />
+      <Categories />
     </>
   );
 }
