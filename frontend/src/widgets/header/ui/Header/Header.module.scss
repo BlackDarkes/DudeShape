@@ -28,9 +28,7 @@
     display: inline-flex;
     color: $mainGreen;
 
-    &:active {
-      translate: 0 rem(1);
-    }
+    @include active();
 
     @include hover() {
       color: $mainBlack;

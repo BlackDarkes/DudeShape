@@ -20,9 +20,7 @@
       transform-origin: left;
     }
 
-    &:active {
-      translate: 0 rem(1);
-    }
+    @include active();
 
     @include hover() {
       color: $mainGreen;

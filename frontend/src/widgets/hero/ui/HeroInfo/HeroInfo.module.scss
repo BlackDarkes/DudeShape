@@ -19,8 +19,12 @@
     background-color: $mainWhite;
     color: $mainGreen;
 
-    &:focus-visible {
-      outline-color: $mainWhite
+    @include focus($mainWhite);
+    @include active();
+    @include hover() {
+      color: $mainWhite;
+      background-color: transparent;
+      outline-color: $mainWhite;
     }
   }
 

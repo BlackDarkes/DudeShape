@@ -27,20 +27,16 @@ a {
 
 button,
 a {
-  outline: rem(1) solid transparent;
-  outline-offset: rem(5);
-  border-radius: rem(4);
   transition: $transition;
 
-  &:focus-visible {
-    outline-color: $mainGreen;
-  }
+  @include focus();
 }
 
 body {
   font-family: var($font-dm_sans);
   overflow-x: hidden;
   -webkit-tap-highlight-color: transparent;
+  background-color: $mainBackground;
 }
 
 li {

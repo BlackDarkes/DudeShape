@@ -1,5 +1,5 @@
 .aboutUs {
-  padding-bottom: rem(140);
+  padding-bottom: clamp(rem(90),7vw,rem(140));
 
   &Container {
     display: flex;

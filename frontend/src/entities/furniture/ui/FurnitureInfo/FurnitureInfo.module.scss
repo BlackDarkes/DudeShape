@@ -1,0 +1,42 @@
+.info {
+  padding: rem(30) rem(24);
+
+  &Head, &Body {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &Head {
+    margin-bottom: clamp(rem(10), 7vw, rem(20));
+
+    &Title {
+      @include fluid-text(20, 18);
+      font-weight: 500;
+      color: $secondaryBlack;
+    }
+
+    &Buttons {
+      display: flex;
+      column-gap: rem(8);
+    }
+  }
+
+  &Body {
+    &Price {
+      @include fluid-text(24, 20);
+      color: $mainGreen;
+      font-weight: 500;
+    }
+
+    &Button {
+      padding: rem(5) rem(14);
+
+      @include active();
+      @include hover() {
+        background-color: transparent;
+        color: $mainGreen;
+        outline-color: $mainGreen;
+      }
+    }
+  }
+}

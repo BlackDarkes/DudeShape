@@ -1,0 +1,6 @@
+.listItem {
+  flex-shrink: 0;
+  background-color: $mainWhite;
+  width: miN(100%, rem(380));
+  scroll-snap-align: start;
+}

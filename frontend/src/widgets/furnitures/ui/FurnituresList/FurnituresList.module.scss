@@ -1,0 +1,12 @@
+.list {
+  display: flex;
+  column-gap: rem(30);
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  scroll-snap-align: start;
+  overflow-x: auto;
+
+  &::-webkit-scrollbar {
+    height: 0;
+  }
+}

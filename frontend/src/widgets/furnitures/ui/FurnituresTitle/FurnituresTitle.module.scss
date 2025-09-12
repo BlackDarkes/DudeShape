@@ -1,0 +1,34 @@
+.head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  column-gap: rem(40);
+  margin-bottom: clamp(rem(40), 7vw, rem(80));
+
+  &TitleContainer {
+    width: min(100%, rem(819));
+  }
+
+  &Title {
+    margin-bottom: clamp(rem(10),7vw,rem(20));
+    @include fluid-text(32, 24)
+  }
+
+  &Text {
+    @include fluid-text(20, 18)
+  }
+
+  &Buttons {
+    display: flex;
+    column-gap: rem(16);
+
+    @include mobile() {
+      display: none;
+    }
+  }
+
+  &Button {
+    width: 40;
+    height: 40;
+  }
+}
