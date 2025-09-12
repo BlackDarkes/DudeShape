@@ -16,8 +16,8 @@
     &::before, &::after {
       content: "";
       position: absolute;
-      width: clamp(rem(90),14vw,rem(175));
-      height: clamp(rem(50),7vw,rem(85));
+      width: clamp(rem(130),14vw,rem(175));
+      height: clamp(rem(70),7vw,rem(85));
       background-color: $mainGreen;
     }
 
@@ -36,18 +36,21 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: rem(30);
+    width: min(100%, rem(474));
   }
 
   &Button {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     row-gap: rem(14);
-    padding: rem(15) rem(65);
-    width: 100%;
+    width: min(100%, rem(222));
+    height: clamp(rem(80),7vw,rem(90));
     border: rem(1) solid $lightGreen;
     color: $disableGray;
 
+    @include fluid-text(16, 14);
     @include active();
     @include hover() {
       color: $mainBlack;
@@ -59,5 +62,10 @@
       color: $mainWhite;
       border-color: $secondaryGreen;
     }
+  }
+
+  @include tablet() {
+    flex-direction: column;
+    row-gap: rem(80);
   }
 }

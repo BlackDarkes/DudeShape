@@ -12,11 +12,13 @@
 
   &Buttons {
     display: flex;
-    column-gap: clamp(rem(50),7vw,rem(100));
+    column-gap: clamp(rem(30),7vw,rem(100));
+    overflow-x: auto;
   }
 
   &Button {
+    flex-shrink: 0;
     color: $disableGray;
-    @include fluid-text(24, 20)
+    @include fluid-text(24, 16)
   }
 }

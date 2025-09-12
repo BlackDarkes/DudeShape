@@ -5,6 +5,7 @@
   width: 100vw;
   padding-block: rem(44) rem(26);
   background-color: $mainWhite;
+  z-index: $z-400;
 
   &Container {
     display: flex;
