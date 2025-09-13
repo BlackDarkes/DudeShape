@@ -1,0 +1,9 @@
+.info {
+  width: min(100%, rem(535));
+
+  &Title {
+    margin-bottom: clamp(rem(10),7vw,rem(20));
+    color: $secondaryBlack;
+    @include fluid-text(32, 24)
+  }
+}

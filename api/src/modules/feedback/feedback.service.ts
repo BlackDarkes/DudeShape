@@ -17,7 +17,7 @@ export class FeedbackService {
   async getUserFeedback(userId: string) {
     const userFeedbacks = this.userRepository
       .createQueryBuilder("users")
-      .select(["users.id as id", "users.name as name", "feedbacks.message as message", "feedbacks.stars as stars"])
+      .select(["users.id as id", "users.name as name", "users.avatar as avatar", "feedbacks.message as message", "feedbacks.stars as stars"])
       .innerJoin("users.feedbacks", "feedbacks")
       .where("users.id = :id", { id: userId })
       .getRawOne()

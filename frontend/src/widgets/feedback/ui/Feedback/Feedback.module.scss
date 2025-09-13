@@ -1,0 +1,39 @@
+.feedback {
+  padding-bottom: clamp(rem(80),7vw,rem(140));
+
+  &Container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-items: end;
+    align-items: center;
+    column-gap: rem(100);
+
+    @include tablet() {
+      grid-template-columns: 1fr;
+      justify-items: center;
+      row-gap: rem(60);
+    }
+  }
+
+  &ContainerImage {
+    position: relative;
+    width: min(100%, rem(459));
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: rem(1);
+      left: -21%;
+      width: 100%;
+      height: calc(100% - rem(1));
+      background-color: $mainGreen;
+      border-radius: 50%;
+      z-index: $z-100;
+    }
+  }
+
+  &Image {
+    position: relative;
+    z-index: $z-200;
+  }
+}

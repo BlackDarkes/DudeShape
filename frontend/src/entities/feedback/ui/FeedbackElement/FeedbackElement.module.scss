@@ -1,0 +1,39 @@
+.info {
+  display: flex;
+  flex-direction: column;
+  row-gap: clamp(rem(20),7vw,rem(40));
+
+  &Feedback {
+    color: $secondaryGray;
+    line-height: rem(27);
+    @include fluid-text(20, 16)
+  }
+
+  &User {
+    display: flex;
+    column-gap: rem(10);
+  }
+
+  &Avatar {
+    width: rem(50);
+    height: rem(50);
+    border-radius: 50%;
+  }
+
+  &Name {
+    font-weight: 600;
+    @include fluid-text(16, 14)
+  }
+
+  &Stars {
+    display: flex;
+    align-items: center;
+    column-gap: rem(8);
+    font-size: rem(14);
+    font-weight: 500;
+
+    &Icon {
+      color: $starYellow;
+    }
+  }
+}

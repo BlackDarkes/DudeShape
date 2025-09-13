@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { IFeedback } from "../../types/feedback.interface";
 import IconStar from "../../assets/star.svg";
+import styles from './FeedbackElement.module.scss'
 
 interface IFeedbackElementProps {
   feedback: IFeedback;
@@ -8,15 +9,15 @@ interface IFeedbackElementProps {
 
 export const FeedbackElement = ({ feedback }: IFeedbackElementProps) => {
   return (
-    <div>
-      <p>{feedback.message}</p>
+    <div className={styles.info}>
+      <p className={styles.infoFeedback}>{feedback.message}</p>
 
-      <div>
-        <Image src={feedback.avatar || '/'} alt="avatar" width={50} height={50} />
+      <div className={styles.infoUser}>
+        <Image src={feedback.avatar || '/'} className={styles.infoAvatar} alt="avatar" width={50} height={50} />
         <div>
-          <h3>{feedback.name}</h3>
-          <p>
-            <IconStar />
+          <p className={styles.infoName}>{feedback.name}</p>
+          <p className={styles.infoStars}>
+            <IconStar className={styles.infoStarsIcon} />
             <span>{feedback.stars}</span>
           </p>
         </div>
