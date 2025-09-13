@@ -1,0 +1,46 @@
+.container {
+  padding-inline: rem(10);
+  width: min(100%, rem(471));
+
+  &Form {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    column-gap: clamp(rem(10),2vw,rem(40));
+    padding: rem(6) clamp(rem(9),2vw,rem(18));
+    background-color: $mainWhite;
+  }
+
+  &ContainerInput {
+    display: flex;
+    align-items: center;
+    column-gap: rem(5);
+    width: 100%;
+  }
+
+  &Input {
+    border: 0;
+    outline: 0;
+    width: 100%;
+
+    &::placeholder {
+      color: #BABABA;
+    }
+
+    &Icon {
+      flex-shrink: 0;
+      width: rem(16);
+      height: rem(16);
+      color: #BABABA;
+    }
+  }
+
+  &Button {
+    padding: clamp(rem(9),2vw,rem(15)) clamp(rem(17),2vw,rem(32));
+  }
+
+  &Error {
+    margin-bottom: rem(5);
+    color: $selectColor;
+  }
+}

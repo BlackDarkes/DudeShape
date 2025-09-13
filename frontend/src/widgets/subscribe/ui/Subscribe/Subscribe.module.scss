@@ -1,0 +1,27 @@
+.subscribe {
+  padding-bottom: clamp(rem(80),7vw,rem(140));
+
+  &Container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-block: clamp(rem(40),7vw,rem(65)) clamp(rem(35),7vw,rem(65));
+    background-color: $secondWhite;
+  }
+
+  &Title {
+    margin-bottom: rem(20);
+    width: miN(100%, rem(605));
+    line-height: rem(48);
+    text-align: center;
+    @include fluid-text(32, 24)
+  }
+
+  &Text {
+    margin-bottom: rem(40);
+    width: min(100%, rem(493));
+    line-height: rem(24);
+    text-align: center;
+    @include fluid-text(16, 14)
+  }
+}
