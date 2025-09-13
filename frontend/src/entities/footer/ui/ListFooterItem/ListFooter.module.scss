@@ -1,0 +1,9 @@
+.footerList {
+  flex-shrink: 0;
+  width: fit-content;
+
+  &Title {
+    margin-bottom: rem(24);
+    @include fluid-text(20, 18)
+  }
+}

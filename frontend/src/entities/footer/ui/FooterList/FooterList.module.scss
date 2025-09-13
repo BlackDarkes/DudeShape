@@ -1,0 +1,5 @@
+.list {
+  display: flex;
+  flex-direction: column;
+  row-gap: clamp(rem(10),2vw,rem(16));
+}

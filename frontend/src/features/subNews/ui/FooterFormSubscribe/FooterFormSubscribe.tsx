@@ -5,6 +5,7 @@ import { SubmitHandler, useForm } from "react-hook-form";
 import { useAddSubscribe } from "../../api/addSubscribe";
 import z from "zod";
 import IconArrow from "../../assets/arrow.svg";
+import styles from './FooterFormSubscribe.module.scss'
 
 interface IFormSubscribe {
   email: string;
@@ -27,15 +28,15 @@ export const FooterFormSubscribe = () => {
   }
 
   return (
-    <div>
-      <form onSubmit={handleSubmit(onSubmit)}>
-        <input type="email" {...register("email")} placeholder="Email Address" />
-        <button type="submit">
+    <div className={styles.container}>
+      <form onSubmit={handleSubmit(onSubmit)} className={styles.containerForm}>
+        <input type="email" className={styles.containerInput} {...register("email")} placeholder="Email Address" />
+        <button type="submit" className={styles.containerButton}>
           <IconArrow />
         </button>
       </form>
 
-      { errors.email && <span>{ errors.email?.message }</span> }
+      { errors.email && <span className={styles.containerError}>{ errors.email?.message }</span> }
     </div>
   );
 }

@@ -1,0 +1,9 @@
+.subscribe {
+  flex-shrink: 0;
+  width: min(100%, rem(253));
+
+  &Title {
+    margin-bottom: rem(23);
+    @include fluid-text(20, 18)
+  }
+}

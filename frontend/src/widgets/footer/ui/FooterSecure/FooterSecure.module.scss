@@ -1,0 +1,7 @@
+.secure {
+  padding-top: rem(20);
+  text-align: center;
+  border-top: rem(1) solid $borderGreen;
+
+  @include fluid-text(16, 14)
+}

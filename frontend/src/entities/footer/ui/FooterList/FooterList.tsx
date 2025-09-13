@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { memo } from "react";
+import styles from './FooterList.module.scss'
 
 interface IFooterListProps {
   list: string[];
@@ -7,7 +8,7 @@ interface IFooterListProps {
   
 const FooterList = memo(({ list }: IFooterListProps) => {
   return (
-    <ul>
+    <ul className={styles.list}>
       {list.map((item) => (
         <li key={item}>
           <Link href={"/"}>{item}</Link>

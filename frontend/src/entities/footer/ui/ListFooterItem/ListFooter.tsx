@@ -1,4 +1,5 @@
 import { FooterList } from "../FooterList/FooterList";
+import styles from './ListFooter.module.scss'
 
 interface IListFooterProps {
   title: string;
@@ -7,8 +8,8 @@ interface IListFooterProps {
   
 export const FooterListItem = ({ title, list }: IListFooterProps) => {
   return (
-    <div>
-      <h3>{title}</h3>
+    <div className={styles.footerList}>
+      <h3 className={styles.footerListTitle}>{title}</h3>
       <FooterList list={list} />
     </div>
   );

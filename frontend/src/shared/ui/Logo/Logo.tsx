@@ -1,7 +1,11 @@
 import styles from './Logo.module.scss'
 
-export const Logo = () => {
+interface ILogoProps {
+  className?: string;
+}
+  
+export const Logo = ({ className }: ILogoProps) => {
   return (
-    <h1 className={styles.logo}>DudeShape</h1>
+    <h1 className={`${styles.logo} ${className ? className : ""}`}>DudeShape</h1>
   );
 }
