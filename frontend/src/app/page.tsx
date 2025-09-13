@@ -6,6 +6,7 @@ import { Furnitures } from "@/widgets/furnitures";
 import { Categories } from "@/widgets/categories";
 import { Feedback } from "@/widgets/feedback";
 import { Subscribe } from "@/widgets/subscribe";
+import { Footer } from "@/widgets/footer";
 
 export default function Home() {
   return (
@@ -18,6 +19,7 @@ export default function Home() {
       <Categories />
       <Feedback />
       <Subscribe />
+      <Footer />
     </>
   );
 }

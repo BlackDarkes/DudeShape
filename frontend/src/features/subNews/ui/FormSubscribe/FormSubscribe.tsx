@@ -46,7 +46,7 @@ export const FormSubscribe = () => {
         <Button type="submit" ariaLabel="Register" className={styles.containerButton}>Register</Button>
       </form>
 
-      <span className={styles.containerError}>{errors.email && (errors.email?.message)}</span>
+      { errors.email && <span className={styles.containerError}>{ errors.email?.message }</span> }
     </div>
   );
 };
