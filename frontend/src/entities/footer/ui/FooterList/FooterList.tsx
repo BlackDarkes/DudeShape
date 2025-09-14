@@ -11,7 +11,7 @@ const FooterList = memo(({ list }: IFooterListProps) => {
     <ul className={styles.list}>
       {list.map((item) => (
         <li key={item}>
-          <Link href={"/"}>{item}</Link>
+          <Link href={"/"} className={styles.listLink}>{item}</Link>
         </li>
       ))}
     </ul>

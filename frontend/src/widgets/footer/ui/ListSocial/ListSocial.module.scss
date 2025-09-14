@@ -3,4 +3,15 @@
   column-gap: rem(15);
   margin-top: rem(20);
   stroke: $mainBlack;
+
+  &Link {
+    width: fit-content;
+    height: fit-content;
+
+    @include active();
+    @include focus($mainWhite);
+    @include hover() {
+      opacity: 0.6;
+    }
+  }
 }

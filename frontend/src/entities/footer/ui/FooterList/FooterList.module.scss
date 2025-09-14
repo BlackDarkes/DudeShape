@@ -1,5 +1,32 @@
 .list {
   display: flex;
   flex-direction: column;
-  row-gap: clamp(rem(10),2vw,rem(16));
+  row-gap: clamp(rem(10), 2vw, rem(16));
+
+  &Link {
+    display: block;
+    position: relative;
+    width: fit-content;
+
+    &::before {
+      content: "";
+      position: absolute;
+      bottom: rem(-5);
+      left: 0;
+      width: 100%;
+      height: rem(2);
+      scale: 0;
+      transform-origin: left;
+      transition: $transition;
+    }
+
+    @include active();
+    @include focus($mainWhite);
+    @include hover() {
+      &::before {
+        background-color: $mainWhite;
+        scale: 1;
+      }
+    }
+  }
 }

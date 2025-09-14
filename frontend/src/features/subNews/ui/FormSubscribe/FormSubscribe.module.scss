@@ -37,6 +37,12 @@
 
   &Button {
     padding: clamp(rem(9),2vw,rem(15)) clamp(rem(17),2vw,rem(32));
+
+    @include hover() {
+      background-color: $mainWhite;
+      color: $mainGreen;
+      outline-color: $mainGreen;
+    }
   }
 
   &Error {

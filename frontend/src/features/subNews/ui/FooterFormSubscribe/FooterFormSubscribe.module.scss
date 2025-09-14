@@ -23,6 +23,10 @@
     height: rem(26);
     background-color: $starYellow;
     border-radius: 50%;
+
+    @include hover() {
+      opacity: 0.6;
+    }
   }
 
   &Error {

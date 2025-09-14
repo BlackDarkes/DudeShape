@@ -7,7 +7,7 @@ const ListSocial = memo(() => {
   return (
     <ul className={styles.list}>
       {socialItems.map(({ id, icon: Icon }) => (
-        <Link href={"/"} key={id}>
+        <Link href={"/"} key={id} className={styles.listLink}>
           <Icon />
         </Link>
       ))}
