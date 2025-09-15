@@ -12,7 +12,12 @@
   &Infos {
     display: flex;
     justify-content: space-between;
-    column-gap: rem(150);
+    column-gap: clamp(rem(70),7vw,rem(150));
+
+    @include mobile-s() {
+      flex-direction: column;
+      row-gap: rem(60);
+    }
   }
 
   &FooterTitle {
@@ -33,5 +38,10 @@
     display: flex;
     justify-content: space-between;
     column-gap: clamp(rem(60),4vw,rem(100));
+
+    @include tablet() {
+      flex-wrap: wrap;
+      row-gap: rem(60);
+    }
   }
 }
