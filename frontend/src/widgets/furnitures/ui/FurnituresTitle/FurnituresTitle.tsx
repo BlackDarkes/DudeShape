@@ -3,7 +3,12 @@
 import { FurnitureButton } from "@/entities/furniture";
 import styles from './FurnituresTitle.module.scss'
 
-export const FurnituresTitle = () => {
+interface IFurnituresTitleProps {
+  scrollPreview: () => void;
+  scrollNext: () => void;
+}
+
+export const FurnituresTitle = ({ scrollNext, scrollPreview }: IFurnituresTitleProps) => {
   return (
     <div className={styles.head}>
       <div className={styles.headTitleContainer}>
@@ -15,8 +20,8 @@ export const FurnituresTitle = () => {
         </p>
       </div>
       <div className={styles.headButtons}>
-        <FurnitureButton classname={styles.headButton} onClick={() => {}} ariaLabel="arrow left">&lt;</FurnitureButton>
-        <FurnitureButton classname={styles.headButton} onClick={() => {}} ariaLabel="arrow right">&gt;</FurnitureButton>
+        <FurnitureButton classname={styles.headButton} onClick={() => scrollPreview()} ariaLabel="arrow left">&lt;</FurnitureButton>
+        <FurnitureButton classname={styles.headButton} onClick={() => scrollNext()} ariaLabel="arrow right">&gt;</FurnitureButton>
       </div>
     </div>
   );

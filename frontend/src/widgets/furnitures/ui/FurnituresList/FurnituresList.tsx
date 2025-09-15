@@ -2,10 +2,14 @@
 
 import { Furniture } from "@/entities/furniture";
 import { useGetAllFurniture } from "@/entities/furniture/api/getAllFurniture";
-import { memo } from "react";
+import { memo, RefObject } from "react";
 import styles from './FurnituresList.module.scss'
 
-const FurnituresList = memo(() => {
+interface IFurnitureProps {
+  scrollRef: RefObject<HTMLUListElement | null>
+}
+
+const FurnituresList = memo(({ scrollRef }: IFurnitureProps) => {
   const { isLoading, error, data: furnitures } = useGetAllFurniture();
 
   if (error) {
@@ -17,7 +21,7 @@ const FurnituresList = memo(() => {
   }
 
   return (
-    <ul className={styles.list}>
+    <ul className={styles.list} ref={scrollRef}>
       {furnitures?.map((furniture) => (
         <Furniture key={furniture.id} furniture={furniture} />
       ))}
