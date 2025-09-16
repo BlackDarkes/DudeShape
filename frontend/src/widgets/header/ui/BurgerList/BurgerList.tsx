@@ -1,21 +1,49 @@
-"use client"
+"use client";
 
 import { Button } from "@/shared/ui";
 import { useBurgerMenu } from "../../hooks/useBurgerMenu";
 import { NavList } from "../NavList/NavList";
-import styles from './BurgerList.module.scss'
+import styles from "./BurgerList.module.scss";
+import { useStore } from "@/app/store/store";
 
 export const BurgerList = () => {
   const { isOpen } = useBurgerMenu();
+  const { handleType, handleModalOpen, toggleOpen } = useStore();
 
   return (
-    <div className={`${styles.burgerList} ${isOpen ? styles.burgerListActive : ""}`}>
+    <div
+      className={`${styles.burgerList} ${
+        isOpen ? styles.burgerListActive : ""
+      }`}
+    >
       <NavList className={styles.burgerListNav} />
 
       <div className={styles.burgerListButtons}>
-        <Button ariaLabel="Login" className={styles.burgerListButton} tabindex={-1}>Login</Button>
-        <Button ariaLabel="Register" className={styles.burgerListButton} tabindex={-1}>Register</Button>
+        <Button
+          ariaLabel="Login"
+          className={styles.burgerListButton}
+          tabindex={-1}
+          onClick={() => {
+            handleModalOpen();
+            handleType("login");
+            toggleOpen();
+          }}
+        >
+          Login
+        </Button>
+        <Button
+          ariaLabel="Register"
+          className={styles.burgerListButton}
+          tabindex={-1}
+          onClick={() => {
+            handleModalOpen();
+            handleType("register");
+            toggleOpen();
+          }}
+        >
+          Register
+        </Button>
       </div>
     </div>
   );
-}
+};

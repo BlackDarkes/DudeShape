@@ -7,9 +7,10 @@ import { ILogin } from "../types/login.interface";
 export const useLogin = () => {
   return useMutation({
     mutationFn: async (data: ILogin) => {
+      console.log(data)
       const response = await axios.post(
-        "/api/login",
-        { data },
+        "/api/auth/login",
+        { email: data.email, password: data.password },
         {
           headers: {
             "Content-Type": "application/json",

@@ -5,6 +5,8 @@ import { useRegister } from "../../api/register";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { IRegister } from "../../types/register.interface";
+import { useStore } from "@/app/store/store";
+import styles from './RegisterForm.module.scss'
 
 const registerScheme = z.object({
   email: z.email(),
@@ -24,19 +26,32 @@ export const RegisterForm = () => {
 
   const { mutate } = useRegister();
 
+  const { handleType } = useStore();
+
   const onSubmit: SubmitHandler<IRegister> = (data) => {
     mutate(data);
     reset();
   };
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)}>
+    <form onSubmit={handleSubmit(onSubmit)} className={styles.form}>
       <div>
-        <div>
-          <input type="email" {...register("email")} />
-          {errors.email && <span>{errors?.email.message}</span>}
+        <div className={styles.formInputContainer}>
+          <input type="email" className={styles.formInput} {...register("email")} placeholder="email..." />
+          {errors.email && <span className={styles.formError}>{errors?.email.message}</span>}
         </div>
+        <div className={styles.formInputContainer}>
+          <input type="password" className={styles.formInput} {...register("password")} placeholder="password..." />
+          {errors.password && <span className={styles.formError}>{errors?.password.message}</span>}
+        </div>
+        <div>
+          <input type="text" className={styles.formInput} {...register("name")} placeholder="name..." />
+          {errors.name && <span className={styles.formError}>{errors?.name.message}</span>}
+        </div>
+        <button type="button" onClick={() => handleType("login")}>go to login</button>
       </div>
+
+      <button type="submit">Register</button>
     </form>
   );
 };

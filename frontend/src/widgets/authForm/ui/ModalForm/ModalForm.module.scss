@@ -1,0 +1,27 @@
+.modal {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  inset: 0;
+  background-color: #ffffff80;
+  scale: 0;
+  transition: $transition;
+  z-index: $z-400;
+
+  &Container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-inline: rem(20);
+    width: min(100%, rem(600));
+    height: clamp(rem(400),7vw,rem(500));
+    background-color: $mainWhite;
+    box-shadow: rem(0) rem(0) rem(15) $mainBlack;
+  }
+
+  &Active {
+    scale: 1;
+  }
+}

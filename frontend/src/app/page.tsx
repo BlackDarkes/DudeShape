@@ -7,11 +7,13 @@ import { Categories } from "@/widgets/categories";
 import { Feedback } from "@/widgets/feedback";
 import { Subscribe } from "@/widgets/subscribe";
 import { Footer } from "@/widgets/footer";
+import { ModalForm } from "@/widgets/authForm";
 
 export default function Home() {
   return (
     <>
       <Header />
+      <ModalForm />
       <main>
         <Hero />
         <Companies />

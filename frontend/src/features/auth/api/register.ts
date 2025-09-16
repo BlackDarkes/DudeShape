@@ -1,14 +1,15 @@
 "use client"
 
-import { Register, useMutation } from "@tanstack/react-query";
+import { useMutation } from "@tanstack/react-query";
 import axios from "axios";
+import { IRegister } from "../types/register.interface";
 
 export const useRegister = () => {
   return useMutation({
-    mutationFn: async (data: Register) => {
+    mutationFn: async (data: IRegister) => {
       const response = await axios.post(
-        "/api/register",
-        { data },
+        "/api/auth/register",
+        { email: data.email, password: data.password, name: data.name },
         {
           headers: {
             "Content-Type": "application/json",

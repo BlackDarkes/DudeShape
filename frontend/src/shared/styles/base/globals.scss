@@ -32,6 +32,12 @@ a {
   @include focus();
 }
 
+input {
+  border: 0;
+  outline: 0;
+  color: inherit;
+}
+
 input:-webkit-autofill {
   box-shadow: 0 0 0 rem(1000)  $mainWhite inset !important;
   -webkit-text-fill-color: $mainBlack !important;
