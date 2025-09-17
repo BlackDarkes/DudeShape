@@ -48,10 +48,10 @@ export const RegisterForm = () => {
           <input type="text" className={styles.formInput} {...register("name")} placeholder="name..." />
           {errors.name && <span className={styles.formError}>{errors?.name.message}</span>}
         </div>
-        <button type="button" onClick={() => handleType("login")}>go to login</button>
+        <button type="button" onClick={() => handleType("login")} className={styles.formSwap}>go to login</button>
       </div>
 
-      <button type="submit">Register</button>
+      <button type="submit" className={styles.formSubmit}>Register</button>
     </form>
   );
 };
