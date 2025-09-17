@@ -22,6 +22,8 @@
 
   &Error {
     color: $selectColor;
+
+    @include fluid-text(16, 12)
   }
 
   &Swap {

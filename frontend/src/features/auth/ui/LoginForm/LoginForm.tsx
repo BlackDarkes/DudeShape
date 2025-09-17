@@ -40,11 +40,11 @@ export const LoginForm = () => {
       <div>
         <div className={styles.formInputContainer}>
           <input type="email" className={styles.formInput} {...register("email")} placeholder="email..." />
-          {errors.email && <span>{errors?.email.message}</span>}
+          {errors.email && <span className={styles.formError}>{errors?.email.message}</span>}
         </div>
         <div className={styles.formInputContainer}>
           <input type="password" className={styles.formInput} {...register("password")} placeholder="password..." />
-          {errors.password && <span>{errors?.password.message}</span>}
+          {errors.password && <span className={styles.formError}>{errors?.password.message}</span>}
         </div>
         <button type="button" onClick={() => handleType("register")} className={styles.formSwap}>go to register</button>
       </div>

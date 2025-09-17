@@ -13,7 +13,7 @@ export const FeedbackElement = ({ feedback }: IFeedbackElementProps) => {
       <p className={styles.infoFeedback}>{feedback.message}</p>
 
       <div className={styles.infoUser}>
-        <Image src={feedback.avatar || '/'} className={styles.infoAvatar} alt="avatar" width={50} height={50} />
+        <Image src={`${process.env.API_URL}/${feedback.avatar}`} className={styles.infoAvatar} alt="avatar" width={50} height={50} />
         <div>
           <p className={styles.infoName}>{feedback.name}</p>
           <p className={styles.infoStars}>
