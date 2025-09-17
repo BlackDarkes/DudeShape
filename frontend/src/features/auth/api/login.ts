@@ -1,15 +1,14 @@
 "use client"
 
 import { useMutation } from "@tanstack/react-query";
-import axios from "axios";
 import { ILogin } from "../types/login.interface";
+import { api } from "@/lib/interceptor";
 
 export const useLogin = () => {
   return useMutation({
     mutationFn: async (data: ILogin) => {
-      console.log(data)
-      const response = await axios.post(
-        "/api/auth/login",
+      const response = await api.post(
+        "auth/login",
         { email: data.email, password: data.password },
         {
           headers: {

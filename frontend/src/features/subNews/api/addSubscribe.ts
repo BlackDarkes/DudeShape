@@ -1,12 +1,12 @@
 "use client"
 
+import { api } from "@/lib/interceptor";
 import { useMutation } from "@tanstack/react-query";
-import axios from "axios";
 
 export const useAddSubscribe = () => {
   return useMutation({
     mutationFn: async (email: string) => {
-      const response = await axios.post("/api/sub-news", { email }, {
+      const response = await api.post("/sub-news", { email }, {
         headers: {
           "Content-Type": "application/json",
         },

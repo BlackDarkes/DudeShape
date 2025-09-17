@@ -26,15 +26,18 @@ export const RegisterForm = () => {
 
   const { mutate } = useRegister();
 
-  const { handleType } = useStore();
+  const { handleType, handleModalOpen } = useStore();
 
   const onSubmit: SubmitHandler<IRegister> = (data) => {
     mutate(data);
     reset();
+    handleModalOpen();
   };
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} className={styles.form}>
+      <h2 className={styles.formTitle}>Registration:</h2>
+
       <div>
         <div className={styles.formInputContainer}>
           <input type="email" className={styles.formInput} {...register("email")} placeholder="email..." />

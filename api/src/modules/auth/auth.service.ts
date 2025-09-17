@@ -69,7 +69,7 @@ export class AuthService {
 			httpOnly: true,
 			secure: false,
 			sameSite: "strict",
-			maxAge: 7 * 24 * 60 * 60, //7d
+			maxAge: 7 * 24 * 60 * 60 * 1000, //7d
 		});
 
 		return {

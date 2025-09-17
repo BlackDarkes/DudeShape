@@ -32,7 +32,8 @@ export class AuthController {
 		return res.status(200).json({ message: "Вы вышли из аккаунта!" });
 	}
 
-	@Post("refresh") //Maybe using UseGuard(JwtAuthGuard) !!!!TEST
+	@Post("refresh")
+	@UseGuards(JwtAuthGuard) //Maybe using UseGuard(JwtAuthGuard) !!!!TEST
 	async refresh(@Req() req: Request, @Res() res: Response) {
 		const refreshToken = req.cookies?.refresh_token;
 
