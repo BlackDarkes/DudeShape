@@ -38,48 +38,43 @@ export class AuthService {
 		const user = await this.userService.findByEmail(email);
 
 		if (!user || !(await bcrypt.compare(password, user.password))) {
-			return { message: "Не верные данные!" };
+			throw new UnauthorizedException('Не верные данные!');
 		}
 
 		return user;
 	}
 
 	async login(user: UserEntity, res: Response) {
-		res.clearCookie("asses_token");
+		res.clearCookie("access_token");
 		res.clearCookie("refresh_token");
 
 		const payload: IJwtPayload = { email: user.email, sub: user.id };
 
-		const assess_token = this.jwtService.sign(payload, {
-			expiresIn: "1h",
-		});
+		const access_token = this.jwtService.sign(payload, { expiresIn: "1h" });
+		const refresh_token = this.jwtService.sign(payload, { expiresIn: "7d" });
 
-		const refresh_token = this.jwtService.sign(payload, {
-			expiresIn: "7d",
-		});
-
-		res.cookie("assess_token", assess_token, {
+		res.cookie("access_token", access_token, {
 			httpOnly: true,
 			secure: false,
 			sameSite: "strict",
-			maxAge: 60 * 60 * 1000, //1h
+			maxAge: 60 * 60 * 1000, // 1h
 		});
 
 		res.cookie("refresh_token", refresh_token, {
 			httpOnly: true,
 			secure: false,
 			sameSite: "strict",
-			maxAge: 7 * 24 * 60 * 60 * 1000, //7d
+			maxAge: 7 * 24 * 60 * 60 * 1000, // 7d
 		});
 
-		return {
+		res.status(201).json({
 			message: "Вы успешно вошли в аккаунт!",
 			user: {
 				id: user.id,
 				name: user.name,
 				email: user.email,
 			},
-		};
+		});
 	}
 
 	async refreshToken(refreshToken: string, res: Response) {
@@ -115,14 +110,14 @@ export class AuthService {
 				maxAge: 7 * 24 * 60 * 60, //7d
 			});
 
-			return {
+			res.status(201).json({
 				message: "Токен обновлен!",
 				user: {
 					id: user.id,
 					name: user.name,
 					email: user.email,
 				},
-			};
+			});
 		} catch (error) {
 			throw error;
 		}
