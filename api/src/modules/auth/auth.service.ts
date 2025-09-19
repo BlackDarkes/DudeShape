@@ -69,6 +69,7 @@ export class AuthService {
 
 		res.status(201).json({
 			message: "Вы успешно вошли в аккаунт!",
+			token: access_token,
 			user: {
 				id: user.id,
 				name: user.name,
@@ -112,6 +113,7 @@ export class AuthService {
 
 			res.status(201).json({
 				message: "Токен обновлен!",
+				token: newAccessToken,
 				user: {
 					id: user.id,
 					name: user.name,

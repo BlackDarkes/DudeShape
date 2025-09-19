@@ -1,11 +1,13 @@
-import { Body, Controller, Get, Post } from '@nestjs/common';
+import { Body, Controller, Get, Post, UseGuards } from '@nestjs/common';
 import { SubNewsService } from './sub-news.service';
+import { JwtAuthGuard } from '../auth/guard/jwt-auth.guard';
 
 @Controller('sub-news')
 export class SubNewsController {
   constructor(private readonly subNewsService: SubNewsService) {}
 
   @Post("/get-all")
+  @UseGuards(JwtAuthGuard)
   async getAll() {
     return this.subNewsService.getAll();
   }

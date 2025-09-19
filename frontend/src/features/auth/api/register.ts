@@ -8,7 +8,7 @@ export const useRegister = () => {
   return useMutation({
     mutationFn: async (data: IRegister) => {
       const response = await api.post(
-        "auth/register",
+        "/auth/register",
         { email: data.email, password: data.password, name: data.name },
         {
           headers: {

@@ -5,9 +5,8 @@ import { categorySlice, ICategorySlice } from "@/widgets/categories";
 import {
   IModalSlice,
   modalSlice,
-  IUserSlice,
-  userSlice,
 } from "@/widgets/authForm";
+import { IUserSlice, userSlice } from "@/features/auth";
 
 type AppStateType = IBurgerSlice & ICategorySlice & IUserSlice & IModalSlice;
 
@@ -16,8 +15,8 @@ export const useStore = create<AppStateType>()(
     (set, get, api) => ({
       ...burgerSlice(set, get, api),
       ...categorySlice(set, get, api),
-      ...userSlice(set, get, api),
       ...modalSlice(set, get, api),
+      ...userSlice(set, get, api),
     }),
     { name: "app-store" }
   )

@@ -1,3 +1,5 @@
+"use client"
+
 import { Header } from "@/widgets/header";
 import { Hero } from "@/widgets/hero";
 import { Companies } from "@/widgets/companies";
@@ -8,8 +10,11 @@ import { Feedback } from "@/widgets/feedback";
 import { Subscribe } from "@/widgets/subscribe";
 import { Footer } from "@/widgets/footer";
 import { ModalForm } from "@/widgets/authForm";
+import { useTokenRefresh } from "@/shared/api/useTokenRefresh";
 
 export default function Home() {
+  useTokenRefresh();
+
   return (
     <>
       <Header />
