@@ -34,7 +34,7 @@
   &Buttons {
     display: flex;
     flex-direction: column;
-    row-gap: rem(30);
+    row-gap: clamp(rem(15),2vw,rem(30));
     font-size: rem(20);
   }
 

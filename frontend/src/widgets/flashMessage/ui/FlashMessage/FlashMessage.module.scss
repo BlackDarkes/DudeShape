@@ -24,4 +24,10 @@
     translate: 0 0;
     transition: $transition;
   }
+
+  @include mobile() {
+    width: calc(100% - rem(40));
+    right: 0;
+    margin-inline: rem(20);
+  }
 }

@@ -28,6 +28,16 @@ export const BurgerList = () => {
               className={styles.burgerListButton}
               tabindex={-1}
               onClick={() => {
+                console.log("Profile cart");
+              }}
+            >
+              Cart
+            </Button>
+            <Button
+              ariaLabel="profile"
+              className={styles.burgerListButton}
+              tabindex={-1}
+              onClick={() => {
                 console.log("Profile open");
               }}
             >
@@ -39,7 +49,7 @@ export const BurgerList = () => {
               tabindex={-1}
               onClick={() => {
                 logout();
-                mutate();
+                mutate()
                 toggleOpen();
               }}
             >
