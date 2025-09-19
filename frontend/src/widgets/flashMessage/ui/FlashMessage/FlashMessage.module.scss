@@ -1,0 +1,27 @@
+.flash {
+  position: fixed;
+  display: flex;
+  bottom: rem(20);
+  right: rem(40);
+  align-items: center;
+  justify-content: center;
+  padding: rem(20);
+  width: min(100%, rem(400));
+  height: rem(130);
+  background-color: $mainGreen;
+  border-radius: rem(7);
+  translate: 0 150%;
+  transition: $transition;
+  z-index: $z-300;
+
+  &Text {
+    text-align: center;
+    color: $mainWhite;
+    @include fluid-text(20, 16)
+  }
+
+  &Show {
+    translate: 0 0;
+    transition: $transition;
+  }
+}

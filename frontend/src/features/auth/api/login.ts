@@ -6,7 +6,7 @@ import { api } from "@/lib/interceptor";
 import { useStore } from "@/app/store/store";
 
 export const useLogin = () => {
-  const { setUser } = useStore();
+  const { setUser, setMessage, handleFlashModal } = useStore();
 
   return useMutation({
     mutationFn: async (data: ILogin) => {
@@ -22,7 +22,9 @@ export const useLogin = () => {
       return response.data;
     },
     onSuccess: (data) => {
-      setUser(data.user);
+      setMessage(data?.message);
+      setUser(data?.user);
+      handleFlashModal();
     }
   });
 };

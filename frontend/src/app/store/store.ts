@@ -2,13 +2,21 @@ import { create } from "zustand";
 import { devtools } from "zustand/middleware";
 import { burgerSlice, IBurgerSlice } from "@/widgets/header";
 import { categorySlice, ICategorySlice } from "@/widgets/categories";
-import {
-  IModalSlice,
-  modalSlice,
-} from "@/widgets/authForm";
+import { IModalSlice, modalSlice } from "@/widgets/authForm";
 import { IUserSlice, userSlice } from "@/features/auth";
+import {
+  flashModal,
+  IFlashModal,
+  IMessageSlice,
+  messageSlice,
+} from "@/features/flashMessage";
 
-type AppStateType = IBurgerSlice & ICategorySlice & IUserSlice & IModalSlice;
+type AppStateType = IBurgerSlice &
+  ICategorySlice &
+  IUserSlice &
+  IModalSlice &
+  IMessageSlice &
+  IFlashModal;
 
 export const useStore = create<AppStateType>()(
   devtools(
@@ -17,6 +25,8 @@ export const useStore = create<AppStateType>()(
       ...categorySlice(set, get, api),
       ...modalSlice(set, get, api),
       ...userSlice(set, get, api),
+      ...messageSlice(set, get, api),
+      ...flashModal(set, get, api),
     }),
     { name: "app-store" }
   )

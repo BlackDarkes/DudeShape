@@ -11,6 +11,7 @@ import { Subscribe } from "@/widgets/subscribe";
 import { Footer } from "@/widgets/footer";
 import { ModalForm } from "@/widgets/authForm";
 import { useTokenRefresh } from "@/shared/api/useTokenRefresh";
+import { FlashMessage } from "@/widgets/flashMessage";
 
 export default function Home() {
   useTokenRefresh();
@@ -19,6 +20,7 @@ export default function Home() {
     <>
       <Header />
       <ModalForm />
+      <FlashMessage />
       <main>
         <Hero />
         <Companies />
