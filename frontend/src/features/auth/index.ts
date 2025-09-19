@@ -1,3 +1,4 @@
+export { useLogout } from "./api/logout"
 export { LoginForm } from "./ui/LoginForm/LoginForm"; 
 export { RegisterForm } from "./ui/RegisterForm/RegisterForm";
 export { userSlice } from "./models/user.slice";
