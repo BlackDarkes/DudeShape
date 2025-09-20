@@ -1,0 +1,58 @@
+.item {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  width: min(100%, rem(500));
+
+  &Info {
+    display: flex;
+    align-items: center;
+    column-gap: rem(8);
+  }
+
+  &Name {
+    @include fluid-text(18, 16)
+  }
+
+  &Price {
+    @include fluid-text(16, 14)
+  }
+
+  &ButtonContainer {
+    display: flex;
+    align-items: flex-end;
+  }
+
+  &Close {
+    position: absolute;
+    top: rem(0);
+    right: rem(3);
+    width: rem(20);
+    height: rem(10);
+
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 50%;
+      width: 100%;
+      height: rem(2);
+      background-color: $mainBlack;
+    }
+
+    &::before {
+      transform: translate(0, -50%) rotate(45deg);
+    }
+
+    &::after {
+      transform: translate(0, -50%) rotate(-45deg);
+    }
+  }
+
+  &Input {
+    width: rem(20);
+    height: rem(20);
+    background-color: transparent;
+  }
+}
