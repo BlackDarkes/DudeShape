@@ -10,13 +10,15 @@ import {
   IMessageSlice,
   messageSlice,
 } from "@/features/flashMessage";
+import { cartSlice, ICartSLice } from "@/features/cart";
 
 type AppStateType = IBurgerSlice &
   ICategorySlice &
   IUserSlice &
   IModalSlice &
   IMessageSlice &
-  IFlashModal;
+  IFlashModal &
+  ICartSLice;
 
 export const useStore = create<AppStateType>()(
   devtools(
@@ -27,6 +29,7 @@ export const useStore = create<AppStateType>()(
       ...userSlice(set, get, api),
       ...messageSlice(set, get, api),
       ...flashModal(set, get, api),
+      ...cartSlice(set, get, api),
     }),
     { name: "app-store" }
   )

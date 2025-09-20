@@ -34,16 +34,6 @@ export const BurgerList = () => {
               Cart
             </Button>
             <Button
-              ariaLabel="profile"
-              className={styles.burgerListButton}
-              tabindex={-1}
-              onClick={() => {
-                console.log("Profile open");
-              }}
-            >
-              Profile
-            </Button>
-            <Button
               ariaLabel="logout"
               className={styles.burgerListButton}
               tabindex={-1}
