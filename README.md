@@ -46,7 +46,7 @@
 1. Клонирование репозитория:
 
    ```bash
-   git clone https://github.com/BlackDarkes/DudeShape.**git**
+   git clone https://github.com/BlackDarkes/DudeShape.git
 
    ```
 
